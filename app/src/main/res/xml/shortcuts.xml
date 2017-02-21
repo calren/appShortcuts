@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:shortcutId="static"
+        android:shortcutLongLabel="@string/static_shortcut_long_label"
+        android:shortcutShortLabel="@string/static_shortcut_short_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.caren.sushi.Home"
+            android:targetPackage="com.example.caren.sushi" />
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.example.caren.sushi.DetailActivity"
+            android:targetPackage="com.example.caren.sushi" />
+    </shortcut>
+</shortcuts>

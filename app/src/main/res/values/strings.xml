@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sushi</string>
+
+    <string name="static_shortcut_long_label">OPEN CAMERA FOR PICTURES</string>
+    <string name="static_shortcut_short_label">CAMERA</string>
+
+</resources>
