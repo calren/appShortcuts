@@ -23,18 +23,13 @@ public class Home extends Activity {
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
 
 
-        ShortcutInfo webShortcut = new ShortcutInfo.Builder(this, "shortcut_web")
-                .setShortLabel("novoda.com")
-                .setLongLabel("Open novoda.com web site")
-//                .setIcon(Icon.createWithResource(this, R.drawable.ic_dynamic_shortcut))
-                .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("https://novoda.com")))
+        ShortcutInfo restaurantShortcut = new ShortcutInfo.Builder(this, "shortcut_restaurant")
+                .setShortLabel("Last Restaurant")
+                .setLongLabel("Order again from the last restaurant")
+                .setIcon(Icon.createWithResource(this, R.drawable.sushi))
+                .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("https://google.com")))
                 .build();
-
-
-        shortcutManager.setDynamicShortcuts(Collections.singletonList(webShortcut));
-
-        Intent myIntent = new Intent(Home.this, DetailActivity.class);
-        myIntent.putExtra("key", 123); //Optional parameters
-        Home.this.startActivity(myIntent);
+        
+        shortcutManager.setDynamicShortcuts(Collections.singletonList(restaurantShortcut));
     }
 }
