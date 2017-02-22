@@ -17,6 +17,7 @@ public class Home extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        createDynamicShortcut();
     }
 
     private void createDynamicShortcut() {
@@ -27,9 +28,14 @@ public class Home extends Activity {
                 .setShortLabel("Last Restaurant")
                 .setLongLabel("Order again from the last restaurant")
                 .setIcon(Icon.createWithResource(this, R.drawable.sushi))
-                .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("https://google.com")))
+                .setIntents(
+                        new Intent[]{
+                                new Intent(Intent.ACTION_MAIN, Uri.EMPTY, this, Home.class)
+                                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK),
+                                new Intent(DetailActivity.INTENT_RECEIVER)
+                        })
                 .build();
-        
+
         shortcutManager.setDynamicShortcuts(Collections.singletonList(restaurantShortcut));
     }
 }
