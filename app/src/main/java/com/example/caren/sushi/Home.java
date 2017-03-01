@@ -26,7 +26,8 @@ public class Home extends Activity {
     private void createDynamicShortcut() {
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
 
-        ForegroundColorSpan purpleSpan = new ForegroundColorSpan(getResources().getColor(android.R.color.holo_red_light, getTheme()));
+        ForegroundColorSpan purpleSpan = new ForegroundColorSpan
+                (getResources().getColor(android.R.color.holo_red_light, getTheme()));
         String label = "Last Restaurant";
         SpannableStringBuilder colouredLabel = new SpannableStringBuilder(label);
         colouredLabel.setSpan(purpleSpan, 0, label.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
