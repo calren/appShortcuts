@@ -8,6 +8,9 @@ import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 
 import java.util.Collections;
 
@@ -23,9 +26,14 @@ public class Home extends Activity {
     private void createDynamicShortcut() {
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
 
+        ForegroundColorSpan purpleSpan = new ForegroundColorSpan(getResources().getColor(android.R.color.holo_red_light, getTheme()));
+        String label = "Last Restaurant";
+        SpannableStringBuilder colouredLabel = new SpannableStringBuilder(label);
+        colouredLabel.setSpan(purpleSpan, 0, label.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+
 
         ShortcutInfo restaurantShortcut = new ShortcutInfo.Builder(this, "shortcut_restaurant")
-                .setShortLabel("Last Restaurant")
+                .setShortLabel(colouredLabel)
                 .setLongLabel("Order again from the last restaurant")
                 .setIcon(Icon.createWithResource(this, R.drawable.sushi))
                 .setIntents(
