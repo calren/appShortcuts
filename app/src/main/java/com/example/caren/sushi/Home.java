@@ -28,14 +28,14 @@ public class Home extends Activity {
 
         ForegroundColorSpan purpleSpan = new ForegroundColorSpan
                 (getResources().getColor(android.R.color.holo_red_light, getTheme()));
-        String label = "Last Restaurant";
+        String label = "Last";
         SpannableStringBuilder colouredLabel = new SpannableStringBuilder(label);
         colouredLabel.setSpan(purpleSpan, 0, label.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
 
 
         ShortcutInfo restaurantShortcut = new ShortcutInfo.Builder(this, "shortcut_restaurant")
                 .setShortLabel(colouredLabel)
-                .setLongLabel("Order again from the last restaurant")
+                .setLongLabel("Order again")
                 .setIcon(Icon.createWithResource(this, R.drawable.sushi))
                 .setIntents(
                         new Intent[]{
